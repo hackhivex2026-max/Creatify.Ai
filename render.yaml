@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: creatify-ai
+    runtime: node
+    plan: starter
+    buildCommand: echo "no build step"
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 22.13.0
+      - key: AUTH_SECRET
+        generateValue: true
+      - key: DATA_DIR
+        value: /var/data
+      - key: MAGICHOUR_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: "*"
+    disk:
+      name: creatify-data
+      mountPath: /var/data
+      sizeGB: 1

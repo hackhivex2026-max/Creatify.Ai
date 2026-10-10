@@ -1,0 +1,6 @@
+.env
+node_modules/
+data/creatify.db*
+data/.secret
+data/media/
+.DS_Store
